@@ -10,10 +10,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Store List</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<a href="">index</a>
-	<h1>Store List</h1>
+	<a href="<%=request.getContextPath()%>/index.jsp">index</a>
+	<div class="jumbotron text-center">
+		<h1>Store List</h1>
+	</div>
+	
 	<table border="1">
 		<thead>
 			<tr>
