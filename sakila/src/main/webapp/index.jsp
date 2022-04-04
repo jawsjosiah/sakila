@@ -15,6 +15,7 @@
 		<ol>
 		<li><a href="<%=request.getContextPath()%>/storeList.jsp">Store List</a></li>
 		<li><a href="<%=request.getContextPath()%>/staffList.jsp">Staff List</a></li>
+		<li><a href="<%=request.getContextPath()%>/actorInfoList.jsp">ActorInfo List</a></li>
 	</ol>
 	</div>
 	
