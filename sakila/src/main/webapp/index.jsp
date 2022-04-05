@@ -13,10 +13,23 @@
 	
 	<div class="container pt-3 p-3 my-3 border">
 		<ol>
-		<li><a href="<%=request.getContextPath()%>/storeList.jsp">Store List</a></li>
-		<li><a href="<%=request.getContextPath()%>/staffList.jsp">Staff List</a></li>
-		<li><a href="<%=request.getContextPath()%>/actorInfoList.jsp">ActorInfo List</a></li>
-	</ol>
+			<li><a href="<%=request.getContextPath()%>/storeList.jsp">Store List</a></li>
+			<li><a href="<%=request.getContextPath()%>/staffList.jsp">Staff List</a></li>
+
+			<!-- view 7개 리스트 -->
+			<li><a href="<%=request.getContextPath()%>/actorInfoList.jsp">actorInfoList(view)</a></li>
+			<li><a href="<%=request.getContextPath()%>/customerList.jsp">customerList(view)</a></li>
+			<li><a href="<%=request.getContextPath()%>/filmList.jsp">filmList(view)</a></li>
+			<li><a href="<%=request.getContextPath()%>/nicerButSlowerFilmList.jsp">nicerButSlowerFilmList(view)</a></li>
+			<li><a href="<%=request.getContextPath()%>/salesByFilmCategory.jsp">salesByFilmCategory(view)</a></li>
+			<li><a href="<%=request.getContextPath()%>/salesByStore.jsp">salesByStore(view)</a></li>
+			<li><a href="<%=request.getContextPath()%>/staffListView.jsp">staffList(view)</a></li>
+			
+			<!-- procedure 3개 결과 화면 -->
+			<li><a href="<%=request.getContextPath()%>/filmInStock.jsp">filmInStock</a></li>
+			<li><a href="<%=request.getContextPath()%>/filmNotInStock.jsp">filmNotInStock</a></li>
+			<li><a href="<%=request.getContextPath()%>/rewardsReport.jsp">rewardsReport</a></li>
+		</ol>
 	</div>
 	
 </body>
