@@ -58,7 +58,7 @@ public class ActorInfoDao {
 	}
 	
 	// 행의 총 갯수를 구하기 위한 메서드 구현 
-	public int totalRow() {
+	public int selectTotalRow() {
 		// 전체 행수 0으로 초기화 
 		int totalRow = 0; 
 		

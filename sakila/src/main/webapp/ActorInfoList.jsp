@@ -30,7 +30,7 @@
 	// ActorInfoDao 인스턴스 생성 
 	list = actorInfoDao.selectActorInfoListByPage(beginRow, rowPerPage);
 	// 페이지 나누는 메서드 호출 
-	totalRow = actorInfoDao.totalRow(); 
+	totalRow = actorInfoDao.selectTotalRow(); 
 	// 행의 총 갯수 반환하는 메서드 호출 
 	System.out.println(totalRow+"//totalRow(ActorInfoList.jsp)");
 	// 디버깅 코드 
