@@ -20,6 +20,8 @@ public class FilmListDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null; 
 		
+		conn = DBUtil.getConnection();
+		
 		String sql = "select fid, title, description, category, price, length, rating, actors from film_list order by fid limit ?,?";
 		
 		try {
@@ -38,6 +40,7 @@ public class FilmListDao {
 				fl.setLength(rs.getInt("length"));
 				fl.setRating(rs.getString("rating"));
 				fl.setActors(rs.getString("actors"));
+				list.add(fl);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

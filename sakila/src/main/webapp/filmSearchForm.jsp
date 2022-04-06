@@ -76,7 +76,7 @@
 			<tr>
 				<td>배우 검색</td>
 				<td>
-					<input type="text" name="actor">
+					<input type="text" name="actors">
 				</td>
 			</tr>
 			<tr>

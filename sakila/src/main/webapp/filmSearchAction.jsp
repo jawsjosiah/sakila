@@ -14,7 +14,7 @@
 		length = Integer.parseInt(request.getParameter("length"));
 	}
 	String title = request.getParameter("title");
-	String actor = request.getParameter("actor");
+	String actors = request.getParameter("actors");
 	
 	
 	int rowPerPage = 10;
@@ -39,7 +39,7 @@
 	System.out.println(beginRow+ "<-- beginRow(filmSearchAction.jsp)");
 	// 디버깅 코드 
 	
-	List<FilmList> list = filmDao.selectFilmListSearch(beginRow ,rowPerPage ,category, rating, price, length, title, actor);
+	List<FilmList> list = filmDao.selectFilmListSearch(beginRow ,rowPerPage ,category, rating, price, length, title, actors);
 	
 	System.out.println(list.size()); // 0
 	
@@ -47,7 +47,7 @@
 	
 	
 
-	totalRow = filmDao.selectTotalRow(category, rating, price, length, title, actor); 
+	totalRow = filmDao.selectTotalRow(category, rating, price, length, title, actors); 
 
 	System.out.println(totalRow+"//totalRow(ActorInfoList.jsp)");
 
@@ -113,7 +113,7 @@
 		<%
 			if(currentPage > 1) {
 		%>
-				<a href="<%=request.getContextPath()%>/filmSearchAction.jsp?currentPage=<%=currentPage-1%>">이전</a>
+				<a href="<%=request.getContextPath()%>/filmSearchAction.jsp?currentPage=<%=currentPage-1%>&category=<%=category%>&rating=<%=rating%>&price=<%=price%>&length=<%=length%>&title=<%=title%>&actors=<%=actors%>" class="btn btn-outline-info">이전</a>
 		<%
 			}
 		%>
@@ -121,7 +121,8 @@
 		<%
 			if(currentPage < lastPage) {
 		%>
-				<a href="<%=request.getContextPath()%>/filmSearchAction.jsp?currentPage=<%=currentPage+1%>">다음</a>
+				<a href="<%=request.getContextPath()%>/filmSearchAction.jsp?currentPage=<%=currentPage+1%>&category=<%=category%>&rating=<%=rating%>&price=<%=price%>&length=<%=length%>&title=<%=title%>&actors=<%=actors%>" class="btn btn-outline-info">다음</a>
+   
 		<%
 			}
 		%>
