@@ -6,12 +6,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>INDEX</h1>
-	<h3>테이블 리스트</h3>
+	<div class="jumbotron text-center">
+		<h1>INDEX</h1>
+	</div>
+		
 	<ol>
 		<li><a href="<%=request.getContextPath()%>/storeList.jsp">Store List</a></li>
 		<li><a href="<%=request.getContextPath()%>/staffList.jsp">Staff List</a></li>
-	</ol>
+	</ol>	
 	
 	<h3>뷰 리스트</h3>
 	<ol>	
