@@ -418,21 +418,31 @@ public class FilmDao {
 		// CallableStatement : 프로시저를 실행 
 		CallableStatement stmt = null;
 		ResultSet rs = null; 
+		
 		// select inventory_id 
 		List<Integer> list = new ArrayList<>();
 		// select count(inventory_id) 
 		Integer count = 0; 
+		
 		conn = DBUtil.getConnection();
+		
 		try {
 			stmt = conn.prepareCall("{CALL film_in_stock(?,?,?)}");
 			stmt.setInt(1, filmId);
 			stmt.setInt(2, storeId);
+			// out 파라미터의 자료형 설정 ( 데이터 타입을 생성 )  몇 개 남았는지 out 매개 변수 
 			stmt.registerOutParameter(3, Types.INTEGER);
+			
 			rs = stmt.executeQuery();
 			while(rs.next()) {
 				list.add(rs.getInt(1)); // rs.getInt("inventory_id")
+				System.out.println(rs.getInt(1) + " // rs.getInt(1)");
+				// rs.getInt(1) 데이터 검증 
 			}
-			count = stmt.getInt(3); // 프로시저 3번쨰 out 변수 값 
+			count = stmt.getInt(3); // 프로시저 3번쨰 out 변수 값
+			
+			System.out.println(count+" // count(FilmDao.filmNotInStock())");
+			// 3번째 파라미터 count 데이터 검증 
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -461,6 +471,7 @@ public class FilmDao {
 	
 	public Map<String, Object> filmNotInStockCall(int filmId, int storeId) {
 		Map<String, Object> map = new HashMap<String, Object>();
+		
 		Connection conn = null; 
 		// DB 연결하는 용도 
 		CallableStatement stmt = null;
@@ -482,13 +493,19 @@ public class FilmDao {
 			stmt.setInt(2, storeId);
 			stmt.registerOutParameter(3, Types.INTEGER);
 			rs = stmt.executeQuery();
+			System.out.println(rs + " // rs(FilmDao.filmNotInStock()");
 			while(rs.next()) {
 				list.add(rs.getInt(1)); 
 				// rs.getInt("inventory_id") 
 				// rs.getInt(1) 받아오는 값 파악 
+				
 			}
+			System.out.println(rs.getInt(2) + " // rs.getInt(1)");
+			// rs.getInt(1) 데이터 검증 
 			count = stmt.getInt(3);
 			// 프로시저 3번째 out 변수 값 
+			System.out.println(count+" // count(FilmDao.filmNotInStock())");
+			// 3번째 파라미터 count 데이터 검증 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -498,7 +515,7 @@ public class FilmDao {
 		return map; 
 	}
 	
-	/*
+	
 	// 단위 테스트 용 
 	public static void main(String args[]) {
 		FilmDao fd = new FilmDao();
@@ -514,13 +531,13 @@ public class FilmDao {
 		
 		int count = (Integer)map.get("count");
 		
-		System.out.println(filmId+"번 영화는 "+storeId+"번 가게에 "+count+"개 남지 않음");
+		System.out.println(filmId+"번 영화는 "+storeId+"번 가게에 "+count+"개 대여됨");
 		// 메서드가 올바로 동작했는지 확인 
 		
 		for(int id : list) {
 			System.out.println(id);
 		}
 	}
-	*/
+	
 }
 
