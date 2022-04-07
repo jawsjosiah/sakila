@@ -32,6 +32,7 @@
 	<h3>상세 검색</h3>
 	<ol>
 		<li><a href="<%=request.getContextPath()%>/filmSearchForm.jsp">filmSearchForm</a></li>
+		<li><a href="<%=request.getContextPath()%>/rentalSearchForm.jsp">대여 상세검색</a></li>
 	</ol>
 </body>
 </html> 

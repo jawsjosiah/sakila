@@ -1,10 +1,56 @@
 package dao;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.catalina.Store;
 
 import util.DBUtil;
-
-import java.sql.*;
 public class StoreDao {
+	public List<Integer> selectStoreIdList() {
+		// 메서드 리턴값 담을 변수 list 선언 
+		List<Integer> list = new ArrayList<Integer>();
+		
+		// DB 자원 준비 
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null; 
+		
+		// DB 연결 
+		conn = DBUtil.getConnection();
+		
+		// 쿼리 작성 
+		String sql = "SELECT store_id storeId from store";
+		
+		try {
+			stmt = conn.prepareStatement(sql);
+			rs = stmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(rs.getInt("storeId"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				// DB 자원 반납 
+				conn.close();
+				stmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+		return list; 
+	}
+	
 	public List<Map<String, Object>> selectStoreList() {
 		List<Map<String, Object>> list = new ArrayList<>(); // 다형성
 		Connection conn = null;
