@@ -539,5 +539,37 @@ public class FilmDao {
 		}
 	}
 	
+	public Map<String, Object> rewardsReportCall(int minMonthlyPurchases, double minDollarAmountPurchased) {
+		Map<String, Object> map = new HashMap<>();
+		
+		Connection conn = null;
+		CallableStatement cstmt = null;
+		ResultSet rs = null; 
+		
+		List<Integer> list = new ArrayList<>();
+		
+		Integer count = 0;
+		
+		conn = DBUtil.getConnection();
+		
+		try {
+			cstmt = conn.prepareCall("{CALL rewards_report(?,?,?)}");
+			cstmt.setInt(1, minMonthlyPurchases);
+			cstmt.setDouble(2, minDollarAmountPurchased);
+			cstmt.registerOutParameter(3,Types.INTEGER);
+			rs = cstmt.executeQuery();
+			while(rs.next()) {
+				list.add(rs.getInt(1));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		map.put("list", list );
+		map.put("count", count);
+		return map;
+	}
 }
 
