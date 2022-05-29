@@ -126,7 +126,7 @@
 		<%
 			if(currentPage > 1) {
 		%>
-				<a href="<%=request.getContextPath()%>/rentalSearchAction.jsp?currentPage=<%=currentPage-1%>&storeId=<%=storeId%>&customerName=<%=customerName%>&beginDate=<%=beginDate%>&endDate<%=endDate%>">이전</a>
+				<a href="<%=request.getContextPath()%>/search/rentalSearchAction.jsp?currentPage=<%=currentPage-1%>&storeId=<%=storeId%>&customerName=<%=customerName%>&beginDate=<%=beginDate%>&endDate<%=endDate%>">이전</a>
 		<%
 			}
 		%>
@@ -134,7 +134,7 @@
 		<%
 			if(currentPage < lastPage) {
 		%>
-				<a href="<%=request.getContextPath()%>/rentalSearchAction.jsp?currentPage=<%=currentPage+1%>&storeId=<%=storeId%>&customerName=<%=customerName%>&beginDate=<%=beginDate%>&endDate<%=endDate%>">다음</a>
+				<a href="<%=request.getContextPath()%>/search/rentalSearchAction.jsp?currentPage=<%=currentPage+1%>&storeId=<%=storeId%>&customerName=<%=customerName%>&beginDate=<%=beginDate%>&endDate<%=endDate%>">다음</a>
    
 		<%
 			}

@@ -13,7 +13,7 @@
 </head>
 <body>
 	<h1>대여 상세 검색</h1>
-	<form action="<%=request.getContextPath()%>/rentalSearchAction.jsp" method="post">
+	<form action="<%=request.getContextPath()%>/search/rentalSearchAction.jsp" method="post">
 		<table border="1">
 			<!-- 가게 아이디 검색 -->
 			<tr>

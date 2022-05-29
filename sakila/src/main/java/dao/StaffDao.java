@@ -23,7 +23,7 @@ public class StaffDao {
 			
 			// (2) 마리아 RDBMS에 접속 ( IP주소, 아이디, 비밀번호 ) 
 			
-			conn = DriverManager.getConnection("jdbc:mariadb://localhost:3307/sakila","root","java1234");
+			conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/sakila","root","mariadb1234");
 			System.out.println(conn+"//conn <- StaffDao.java");
 			/*
 				SELECT 

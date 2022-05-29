@@ -113,7 +113,7 @@
 		<%
 			if(currentPage > 1) {
 		%>
-				<a href="<%=request.getContextPath()%>/filmSearchAction.jsp?currentPage=<%=currentPage-1%>&category=<%=category%>&rating=<%=rating%>&price=<%=price%>&length=<%=length%>&title=<%=title%>&actors=<%=actors%>" class="btn btn-outline-info">이전</a>
+				<a href="<%=request.getContextPath()%>/search/filmSearchAction.jsp?currentPage=<%=currentPage-1%>&category=<%=category%>&rating=<%=rating%>&price=<%=price%>&length=<%=length%>&title=<%=title%>&actors=<%=actors%>" class="btn btn-outline-info">이전</a>
 		<%
 			}
 		%>
@@ -121,7 +121,7 @@
 		<%
 			if(currentPage < lastPage) {
 		%>
-				<a href="<%=request.getContextPath()%>/filmSearchAction.jsp?currentPage=<%=currentPage+1%>&category=<%=category%>&rating=<%=rating%>&price=<%=price%>&length=<%=length%>&title=<%=title%>&actors=<%=actors%>" class="btn btn-outline-info">다음</a>
+				<a href="<%=request.getContextPath()%>/search/filmSearchAction.jsp?currentPage=<%=currentPage+1%>&category=<%=category%>&rating=<%=rating%>&price=<%=price%>&length=<%=length%>&title=<%=title%>&actors=<%=actors%>" class="btn btn-outline-info">다음</a>
    
 		<%
 			}

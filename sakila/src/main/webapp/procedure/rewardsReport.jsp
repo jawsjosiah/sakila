@@ -34,7 +34,7 @@
 <body>
 	<h1>RewardsReport</h1>
 	<a href="<%=request.getContextPath() %>/index.jsp">index</a>
-		<form method="post" actioin="<%=request.getContextPath()%>/rewardsReport.jsp">
+		<form method="post" actioin="<%=request.getContextPath()%>/procedure/rewardsReport.jsp">
 			<table border="1">
 				<tr>
 					<td>최소 구매 횟수 선택</td>

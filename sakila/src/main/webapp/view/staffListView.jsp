@@ -29,7 +29,7 @@
 	StaffListDao staffListDao = new StaffListDao();
 	// DAO 인스턴스 생성. DAO 내 메서드 호출하기 위해서 선언 
 	
-	list = staffListDao.selectStaffListListByPage(beginRow, rowPerPage);
+	list = staffListDao.selectStaffListViewByPage(beginRow, rowPerPage);
 	// 페이지 나누는 메서드 호출 
 	
 	totalRow = staffListDao.selectTotalRow();
@@ -54,7 +54,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>StaffListList</title>
+<title>StaffListView</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -98,7 +98,7 @@
 		<%
 			if(currentPage > 1) {
 		%>
-				<a href="<%=request.getContextPath()%>/staffListList.jsp?currentPage=<%=currentPage-1%>">이전</a>
+				<a href="<%=request.getContextPath()%>/view/staffListList.jsp?currentPage=<%=currentPage-1%>">이전</a>
 		<%
 			}
 		%>
@@ -106,7 +106,7 @@
 		<%
 			if(currentPage < lastPage) {
 		%>
-				<a href="<%=request.getContextPath()%>/staffListList.jsp?currentPage=<%=currentPage+1%>">다음</a>
+				<a href="<%=request.getContextPath()%>/view/staffListList.jsp?currentPage=<%=currentPage+1%>">다음</a>
 		<%
 			}
 		%>

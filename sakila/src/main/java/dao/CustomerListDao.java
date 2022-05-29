@@ -22,7 +22,7 @@ public class CustomerListDao {
 		
 		conn = DBUtil.getConnection();
 		
-		String sql = "select id, name, address, zip code, phone, city, country, notes, SID sid from customer_list order by id limit ?,?";
+		String sql = "select id, name, address, `zip code`, phone, city, country, notes, SID sid from customer_list order by id limit ?,?";
 		
 		try {
 			stmt = conn.prepareStatement(sql);
@@ -35,7 +35,7 @@ public class CustomerListDao {
 				cl.setId(rs.getInt("id"));
 				cl.setName(rs.getString("name"));
 				cl.setAddress(rs.getString("address"));
-				cl.setZipCode(rs.getString("zip Code"));
+				cl.setZipCode(rs.getString("zip code"));
 				cl.setPhone(rs.getString("phone"));
 				cl.setCity(rs.getString("city"));
 				cl.setCountry(rs.getString("country"));

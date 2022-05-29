@@ -11,7 +11,7 @@ import util.DBUtil;
 import vo.StaffList;
 
 public class StaffListDao {
-	public List<StaffList> selectStaffListListByPage(int beginRow, int rowPerPage) {
+	public List<StaffList> selectStaffListViewByPage(int beginRow, int rowPerPage) {
 		
 		List<StaffList> list = new ArrayList<StaffList>(); 
 		
@@ -21,7 +21,7 @@ public class StaffListDao {
 		
 		conn = DBUtil.getConnection();
 		
-		String sql = "select id, name, addrss, phone, city, country, sid from staff_list order by id limit ?,? ";
+		String sql = "select id, name, address, `zip code`, phone, city, country, sid from staff_list order by id limit ?,? ";
 		// zip code 이 부분 때문에 자꾸 에러가 생기는 것 같음 
 		
 		try {
@@ -35,7 +35,7 @@ public class StaffListDao {
 				sl.setId(rs.getInt("id"));
 				sl.setName(rs.getString("name"));
 				sl.setAddress(rs.getString("address"));
-				// sl.setZipCode(rs.getString("zipCode"));
+				sl.setZipCode(rs.getString("zip code"));
 				sl.setPhone(rs.getString("phone"));
 				sl.setCity(rs.getString("country"));
 				sl.setSid(rs.getInt("sid"));

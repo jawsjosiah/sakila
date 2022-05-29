@@ -16,7 +16,7 @@
 </head>
 <body>
 	<h1>필름 리스트 뷰 검색</h1>
-	<form action="<%=request.getContextPath()%>/filmSearchAction.jsp" method="post">
+	<form action="<%=request.getContextPath()%>/search/filmSearchAction.jsp" method="post">
 		<table border="1">
 			<tr>
 				<td>카테고리</td>

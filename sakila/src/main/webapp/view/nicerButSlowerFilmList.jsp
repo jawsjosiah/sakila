@@ -85,7 +85,7 @@
 		<%
 			if(currentPage > 1) {
 		%>
-				<a href="<%=request.getContextPath() %>/NicerButSlowerFilmList.jsp?currentPage=<%=currentPage-1 %>">이전</a>
+				<a href="<%=request.getContextPath() %>/view/nicerButSlowerFilmList.jsp?currentPage=<%=currentPage-1 %>">이전</a>
 		<%
 			}
 		%>
@@ -93,7 +93,7 @@
 		<%
 			if(currentPage < lastPage) {
 		%>
-				<a href="<%=request.getContextPath() %>/NicerButSlowerFilmList.jsp?currentPage=<%=currentPage+1 %>">다음</a>
+				<a href="<%=request.getContextPath() %>/view/nicerButSlowerFilmList.jsp?currentPage=<%=currentPage+1 %>">다음</a>
 		<%
 			}
 		%>

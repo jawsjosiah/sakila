@@ -42,7 +42,7 @@
 <body>
 	<h1>FilmInStock</h1>
 	<a href="<%=request.getContextPath() %>/index.jsp">index</a>
-		<form method="post" action="<%=request.getContextPath()%>/filmNotInStock.jsp">
+		<form method="post" action="<%=request.getContextPath()%>/procedure/filmNotInStock.jsp">
 			<table class = "table table-bordered">
 				<tr>
 					<td>필름 번호 선택</td>
