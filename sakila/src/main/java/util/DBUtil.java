@@ -13,7 +13,12 @@ public class DBUtil {
 			System.out.println("드라이버 로딩 성공 // DBUtil.java");
 			// 디버깅 코드 
 			
-			conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/sakila","root","mariadb1234");
+			// 아마존 AWS 서버에 사용되는 DB 주소 
+			conn = DriverManager.getConnection("jdbc:mariadb://:3306/sakila","root","mariadb1234");
+			
+			// 로컬 PC에 사용되는 DB 주소 
+			// conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/sakila","root","mariadb1234");
+			
 			// DB에 연결 
 			System.out.println(conn + "// conn(DBUtil.java)");
 			// 디버깅 코드 
